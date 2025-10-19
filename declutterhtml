@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declutter.AI — Smarter Storage, Cleaner Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a1a;
+            background: #fafafa;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #6c63ff;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #6c63ff;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn {
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #6c63ff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a52d5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #6c63ff;
+            border: 1px solid #6c63ff;
+        }
+        
+        .btn-secondary:hover {
+            background: #f5f4ff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+        
+        .dashboard-mock {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .mock-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .mock-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+        
+        .mock-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            color: #333;
+        }
+        
+        .mock-card {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 3px solid #6c63ff;
+        }
+        
+        .mock-card h4 {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .mock-card p {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .manager-note {
+            margin-top: 24px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: white;
+        }
+        
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .problem-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .problem-card {
+            text-align: center;
+            padding: 32px;
+            border-radius: 12px;
+            background: #f8f9fa;
+        }
+        
+        .problem-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            background: #ffe0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .problem-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Solution Cards */
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .solution-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .solution-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #6c63ff;
+        }
+        
+        .solution-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* Tagging System */
+        .tagging {
+            background: white;
+        }
+        
+        .tag-demo {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .tag-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .tag-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .tag-media { background: #e3f2fd; color: #1565c0; }
+        .tag-documents { background: #fff3e0; color: #e65100; }
+        .tag-archive { background: #f3e5f5; color: #6a1b9a; }
+        .tag-projects { background: #e8f5e9; color: #2e7d32; }
+        .tag-personal { background: #fce4ec; color: #c2185b; }
+        .tag-review { background: #fff9c4; color: #f57f17; }
+        .tag-duplicate { background: #ffebee; color: #c62828; }
+        .tag-expiring { background: #ffe0b2; color: #e64a19; }
+        
+        .tag-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        
+        .tag-type {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .tag-type h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .tag-type p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Dashboard Blueprint */
+        .dashboard-blueprint {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 24px;
+        }
+        
+        .db-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .db-panel h4 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .kpi {
+            margin-bottom: 16px;
+        }
+        
+        .kpi-label {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+        
+        .kpi-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #6c63ff;
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .file-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        
+        .file-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .file-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .icon-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            border: none;
+            cursor: pointer;
+            font-size: 11px;
+        }
+        
+        .icon-btn:hover {
+            background: #6c63ff;
+            color: white;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: white;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-card .price {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+        
+        .pricing-card .period {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            color: #6c63ff;
+            font-weight: bold;
+        }
+        
+        .pricing-card.featured .pricing-features li:before {
+            color: white;
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background: #6c63ff;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .case-study-quote {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .case-study-author {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 48px;
+        }
+        
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .metric {
+            padding: 24px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-value {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Contact */
+        .contact {
+            background: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 32px 0;
+        }
+        
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .footer-email {
+            margin-bottom: 16px;
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .solution-cards,
+            .pricing-cards,
+            .problem-icons {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-blueprint {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Declutter.AI</div>
+                <nav class="nav-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#contact">Contact</a>
+                    <div class="cta-buttons">
+                        <a href="#pricing" class="btn btn-secondary">Try Free</a>
+                        <a href="#contact" class="btn btn-primary">Request Demo</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <h1>Declutter.AI — Smarter Storage, Cleaner Systems</h1>
+            <p>Automated file tagging, safe cleanup, and enterprise analytics — reclaim storage and reduce costs.</p>
+            <div class="hero-cta">
+                <a href="#pricing" class="btn btn-primary">Try Free</a>
+                <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+            </div>
+            
+            <div class="dashboard-mock">
+                <div class="mock-header">
+                    <div class="mock-dot"></div>
+                    <div class="mock-dot"></div>
+                    <div class="mock-dot"></div>
+                </div>
+                <div class="mock-content">
+                    <div class="mock-card">
+                        <h4>FILE INSIGHTS</h4>
+                        <p>1.2M files scanned<br>15,000 redundant files</p>
+                    </div>
+                    <div class="mock-card">
+                        <h4>SMART TAGS</h4>
+                        <p>Auto-categorized<br>Duplicate detection active</p>
+                    </div>
+                    <div class="mock-card">
+                        <h4>AUTO-CLEAN</h4>
+                        <p>Status: ON<br>Next scan: 2 days</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="manager-note">
+                Presented by Declutter.AI — built for teams and individuals.
+            </div>
+        </div>
+    </section>
+
+    <!-- Renewal & Reminders -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Smart Renewal & Reminders</h2>
+            <p class="section-subtitle">Never lose track of important files with automated tracking</p>
+            
+            <div style="background: white; padding: 32px; border-radius: 12px; max-width: 900px; margin: 0 auto 32px; border: 1px solid #e0e0e0;">
+                <div style="display: grid; gap: 16px;">
+                    <div style="background: #fafafa; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;">📄</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px; color: #1a1a1a;">contract_2024.pdf</div>
+                                <div style="font-size: 12px; color: #666;">Expires: Dec 31, 2025 • <span style="color: #e65100;">7 days left</span></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fafafa; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;">📊</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px; color: #1a1a1a;">annual_report.xlsx</div>
+                                <div style="font-size: 12px; color: #666;">Expires: Nov 15, 2025 • <span style="color: #4caf50;">29 days left</span></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fafafa; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;">🔐</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px; color: #1a1a1a;">license_key.txt</div>
+                                <div style="font-size: 12px; color: #666;">Expires: Oct 28, 2025 • <span style="color: #c62828;">2 days left</span></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 24px; padding: 16px; background: #fafafa; border-radius: 8px; border: 1px solid #e0e0e0; border-left: 4px solid #1a1a1a;">
+                    <strong style="color: #1a1a1a;">Automated Reminders:</strong> <span style="color: #666;">Receive email and dashboard notifications 30, 14, and 7 days before file expiration. Bulk renewal and export options available for seamless workflow integration.</span>
+                </div>
+            </div>
+            
+            <div class="problem-icons">
+                <div class="problem-card">
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Lost Productivity</h3>
+                    <p>Hours spent manually searching and organizing files</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Rising Costs</h3>
+                    <p>Unnecessary cloud storage fees for redundant data</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>Compliance Risk</h3>
+                    <p>Difficulty tracking and managing sensitive files</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="features" style="background: #fafafa;">
+        <div class="container">
+            <h2 class="section-title">The Solution</h2>
+            <p class="section-subtitle">Intelligent file management powered by AI automation</p>
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <h3>Autonomous File Management</h3>
+                    <p>Scans repositories, auto-tags files, and suggests safe cleanups based on usage patterns and content analysis with machine learning algorithms.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Tagging & Governance</h3>
+                    <p>Smart tags combined with admin host controls provide audited access, complete visibility, and compliance-ready documentation.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Analytics & Cost Savings</h3>
+                    <p>Real-time dashboards quantify storage saved, cost reduction, and ROI metrics with predictive forecasting capabilities.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Automated Compression</h3>
+                    <p>Intelligent algorithms compress files without quality loss, reducing storage footprint by up to 70% automatically.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Version Control</h3>
+                    <p>Track file changes over time with automatic versioning, allowing easy rollback to previous states when needed.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Scheduled Cleanups</h3>
+                    <p>Set custom automation rules and schedules for different file types, ensuring continuous optimization without manual intervention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagging System -->
+    <section class="tagging">
+        <div class="container">
+            <h2 class="section-title">How File Tags Work</h2>
+            <p class="section-subtitle">Intelligent categorization for effortless organization</p>
+            
+            <div class="tag-demo">
+                <div class="tag-badges">
+                    <span class="tag-badge tag-media">📷 Media</span>
+                    <span class="tag-badge tag-documents">📄 Documents</span>
+                    <span class="tag-badge tag-archive">📦 Archive</span>
+                    <span class="tag-badge tag-projects">🎯 Projects</span>
+                    <span class="tag-badge tag-personal">👤 Personal</span>
+                    <span class="tag-badge tag-review">🔍 To Review</span>
+                    <span class="tag-badge tag-duplicate">⚠️ Duplicate</span>
+                    <span class="tag-badge tag-expiring">⏰ Expiring</span>
+                </div>
+                
+                <div class="tag-types">
+                    <div class="tag-type">
+                        <h4>Smart Tagging</h4>
+                        <p>AI assigns tags based on content type, file metadata, and last access date</p>
+                    </div>
+                    <div class="tag-type">
+                        <h4>Duplicate Tagging</h4>
+                        <p>Automatically identifies and flags duplicate files for safe removal</p>
+                    </div>
+                    <div class="tag-type">
+                        <h4>Expiry / Renewal Tags</h4>
+                        <p>Tracks files nearing renewal dates with automated reminders</p>
+                    </div>
+                    <div class="tag-type">
+                        <h4>Host Tags</h4>
+                        <p>Files associated with specific host agents for access control</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Blueprint -->
+    <section id="dashboard">
+        <div class="container">
+            <h2 class="section-title">Dashboard Blueprint</h2>
+            <p class="section-subtitle">Complete visibility and control over your storage</p>
+            
+            <div class="dashboard-blueprint">
+                <div class="db-panel">
+                    <h4>Storage Insights</h4>
+                    <div class="kpi">
+                        <div class="kpi-label">Total Files Scanned</div>
+                        <div class="kpi-value">1.2M</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="kpi-label">Redundant Files</div>
+                        <div class="kpi-value">15K</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="kpi-label">Space Reclaimed</div>
+                        <div class="kpi-value">850GB</div>
+                    </div>
+                    <div class="kpi">
+                        <div class="kpi-label">Next Auto-Clean</div>
+                        <div class="kpi-value">2d</div>
+                    </div>
+                </div>
+                
+                <div class="db-panel">
+                    <h4>File Grid & Tags</h4>
+                    <div class="file-grid">
+                        <div class="file-item">
+                            <div class="file-item-header">
+                                <span>report.pdf</span>
+                                <span class="tag-badge tag-documents" style="font-size: 10px; padding: 2px 8px;">Doc</span>
+                            </div>
+                            <div class="file-actions">
+                                <button class="icon-btn" title="Preview">👁</button>
+                                <button class="icon-btn" title="Delete">🗑</button>
+                                <button class="icon-btn" title="Tag">🏷</button>
+                            </div>
+                        </div>
+                        <div class="file-item">
+                            <div class="file-item-header">
+                                <span>photo.jpg</span>
+                                <span class="tag-badge tag-media" style="font-size: 10px; padding: 2px 8px;">Media</span>
+                            </div>
+                            <div class="file-actions">
+                                <button class="icon-btn">👁</button>
+                                <button class="icon-btn">🗑</button>
+                                <button class="icon-btn">🏷</button>
+                            </div>
+                        </div>
+                        <div class="file-item">
+                            <div class="file-item-header">
+                                <span>backup.zip</span>
+                                <span class="tag-badge tag-duplicate" style="font-size: 10px; padding: 2px 8px;">Dup</span>
+                            </div>
+                            <div class="file-actions">
+                                <button class="icon-btn">👁</button>
+                                <button class="icon-btn">🗑</button>
+                                <button class="icon-btn">🏷</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 16px; font-size: 12px; color: #666;">
+                        <strong>Tag Summary:</strong> Media (250K) • Documents (180K) • Archive (120K) • Duplicate (15K) • To Review (8K)
+                    </div>
+                </div>
+                
+                <div class="db-panel">
+                    <h4>Actions</h4>
+                    <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">Auto-Clean: ON</button>
+                    <button class="btn btn-secondary" style="width: 100%; margin-bottom: 12px;">Run Smart Scan</button>
+                    <button class="btn btn-secondary" style="width: 100%; margin-bottom: 12px;">Approve Cleanup</button>
+                    <button class="btn btn-secondary" style="width: 100%;">Export Report</button>
+                    
+                    <div style="margin-top: 24px; padding: 12px; background: #f0f0f0; border-radius: 6px; font-size: 12px;">
+                        <strong>Host Agent Alpha</strong><br>
+                        12 hosts active<br>
+                        3 pending approval
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Flow -->
+    <section style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Five simple steps to cleaner storage</p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; flex: 1;">
+                    <div style="width: 60px; height: 60px; background: #6c63ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 12px;">1</div>
+                    <p style="font-size: 14px; color: #333;">Run Smart Scan</p>
+                </div>
+                <div style="flex: 0 0 40px; height: 2px; background: #ddd; margin: 0 -10px;"></div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="width: 60px; height: 60px; background: #6c63ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 12px;">2</div>
+                    <p style="font-size: 14px; color: #333;">Review Tagged Files</p>
+                </div>
+                <div style="flex: 0 0 40px; height: 2px; background: #ddd; margin: 0 -10px;"></div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="width: 60px; height: 60px; background: #6c63ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 12px;">3</div>
+                    <p style="font-size: 14px; color: #333;">Approve Cleanup</p>
+                </div>
+                <div style="flex: 0 0 40px; height: 2px; background: #ddd; margin: 0 -10px;"></div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="width: 60px; height: 60px; background: #6c63ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 12px;">4</div>
+                    <p style="font-size: 14px; color: #333;">System Executes</p>
+                </div>
+                <div style="flex: 0 0 40px; height: 2px; background: #ddd; margin: 0 -10px;"></div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="width: 60px; height: 60px; background: #6c63ff; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 12px;">5</div>
+                    <p style="font-size: 14px; color: #333;">Recoverable Retention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <p class="section-subtitle">Choose the plan that fits your needs</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <div class="period">forever</div>
+                    <ul class="pricing-features">
+                        <li>1 host</li>
+                        <li>2 year storage retention</li>
+                        <li>Basic tagging</li>
+                        <li>Manual cleanup</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">Start Free</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <div class="price">$399</div>
+                    <div class="period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Up to 15 hosts</li>
+                        <li>5 year retention</li>
+                        <li>AI-powered smart tagging</li>
+                        <li>Automated cleanup schedules</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Duplicate detection</li>
+                        <li>Compression algorithms</li>
+                        <li>Priority email support</li>
+                        <li>Renewal reminders</li>
+                        <li>Export reports (PDF/CSV)</li>
+                        <li>~$26.60 per host</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; display: block; text-align: center; background: white; color: #6c63ff;">Buy Pro</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$1,999</div>
+                    <div class="period">per month</div>
+                    <ul class="pricing-features">
+                        <li>100+ hosts (unlimited scale)</li>
+                        <li>Unlimited retention periods</li>
+                        <li>Advanced AI neural tagging</li>
+                        <li>Custom automation workflows</li>
+                        <li>Full API access & webhooks</li>
+                        <li>White-label branding</li>
+                        <li>SSO & SAML integration</li>
+                        <li>Multi-cloud sync (AWS, Azure, GCP)</li>
+                        <li>Dedicated account manager</li>
+                        <li>24/7 priority support</li>
+                        <li>Custom SLA agreements</li>
+                        <li>On-premise deployment option</li>
+                        <li>Advanced compliance tools</li>
+                        <li>~$20 per host</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Buy Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Declutter.AI</h2>
+            <p class="section-subtitle">Advanced features that set us apart</p>
+            
+            <div class="solution-cards" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 48px;">
+                <div class="solution-card">
+                    <h3>🔒 End-to-End Encrypted</h3>
+                    <p>Military-grade AES-256 encryption ensures complete privacy and security for all your data.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🔄 Smart Automation</h3>
+                    <p>AI-driven recurring cleanup schedules adapt to your usage patterns automatically.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>♻️ Recovery Buffer</h3>
+                    <p>Configurable retention periods let you recover accidentally deleted files instantly.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>👥 Role-Based Access</h3>
+                    <p>Granular host controls with full audit trails and permission management.</p>
+                </div>
+            </div>
+
+            <div class="solution-cards" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="solution-card">
+                    <h3>🤖 Machine Learning Tags</h3>
+                    <p>Neural network models continuously learn and improve tagging accuracy based on your file patterns.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>📊 Real-Time Analytics</h3>
+                    <p>Live dashboards with predictive insights show storage trends and cost projections.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🔗 Seamless Integrations</h3>
+                    <p>Connect with Dropbox, Google Drive, OneDrive, AWS S3, and 50+ cloud storage providers.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>⚡ Lightning Fast Scans</h3>
+                    <p>Process millions of files in minutes with distributed computing architecture.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🎯 Smart Duplicate Detection</h3>
+                    <p>Advanced algorithms identify exact and near-duplicate files across all storage locations.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>📱 Cross-Platform Sync</h3>
+                    <p>Desktop, mobile, and web apps keep your storage management accessible everywhere.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🔔 Custom Notifications</h3>
+                    <p>Configure alerts via email, Slack, Teams, or webhook for complete control.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>📈 Cost Optimization</h3>
+                    <p>AI suggests optimal storage tier migrations to minimize cloud spending automatically.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>🛡️ Compliance Ready</h3>
+                    <p>GDPR, HIPAA, and SOC 2 compliant with detailed audit logs and data governance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact<"content: center;">📄</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">contract_2024.pdf</div>
+                                <div style="font-size: 12px; color: #999;">Expires: Dec 31, 2025</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: #fff3e0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📊</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">annual_report.xlsx</div>
+                                <div style="font-size: 12px; color: #999;">Expires: Nov 15, 2025</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 50px; height: 50px; background: #f3e5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center;">🔐</div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">license_key.txt</div>
+                                <div style="font-size: 12px; color: #999;">Expires: Oct 28, 2025</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Renew</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Archive</button>
+                            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 24px; padding: 16px; background: #fff9c4; border-radius: 8px; border-left: 4px solid #f57f17;">
+                    <strong>Automated Reminders:</strong> Receive email and dashboard notifications 30, 14, and 7 days before file expiration. Bulk renewal and export options available.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <p class="section-subtitle">Ready to transform your storage management? Contact us for a demo.</p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="mailto:hello@declutter.ai" class="footer-email">hello@declutter.ai</a>
+            <p>© 2025 Declutter.AI — All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
